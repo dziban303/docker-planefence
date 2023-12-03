@@ -98,7 +98,7 @@ def process_alert(config, plane):
     else:
         description += f"\nSeen near [**{location}**]({plane['adsbx_url']})"
 
-    webhooks, embed = pf.discord.build(config["DISCORD_FEEDER_NAME"], config["PA_DISCORD_WEBHOOKS"], title, description, color=color)
+    webhooks, embed = pf.discord.build(config["DISCORD_FEEDER_NAME"], config["PA_DISCORD_WEBHOOKS"], title, description, color=config["PA_DISCORD_COLOR"])
     pf.attach_media(config, "PA", dbinfo, webhooks, embed)
 
     # Attach data fields
