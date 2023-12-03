@@ -156,6 +156,7 @@ sed -i 's|\(^\s*LOGFILE=\).*|\1'"$LOGFILE"'|' /usr/share/planefence/planefence.c
 [[ "$PF_TWEETEVERY" == "true" ]] && sed -i 's|\(^\s*TWEETEVERY=\).*|\1true|' /usr/share/planefence/planefence.conf || sed -i 's|\(^\s*TWEETEVERY=\).*|\1false|' /usr/share/planefence/planefence.conf
 [[ "x$PA_HISTTIME" != "x" ]] && sed -i 's|\(^\s*HISTTIME=\).*|\1\"'"$PA_HISTTIME"'\"|' /usr/share/plane-alert/plane-alert.conf
 [[ "x$PF_ALERTHEADER" != "x" ]] && sed -i "s|\(^\s*ALERTHEADER=\).*|\1\'$PF_ALERTHEADER\'|" /usr/share/plane-alert/plane-alert.conf
+[[ "x$PF_DISCORD_COLOR" != "x" ]] && sed -i "s|\(^\s*PF_DISCORD_COLOR=\).*|\1\'$PF_DISCORD_COLOR\'|" /usr/share/plane-alert/plane-alert.conf
 
 if [[ "x$PF_SOCK30003HOST" != "x" ]]
 then
