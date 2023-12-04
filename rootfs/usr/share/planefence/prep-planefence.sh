@@ -287,6 +287,8 @@ configure_planefence "PF_DISCORD_WEBHOOKS" "\"${PF_DISCORD_WEBHOOKS}\""
 configure_both "DISCORD_FEEDER_NAME" "\"${DISCORD_FEEDER_NAME}\""
 configure_both "DISCORD_MEDIA" "\"${DISCORD_MEDIA}\""
 configure_both "NOTIFICATION_SERVER" "\"NOTIFICATION_SERVER\""
+# Not sure if this is better than line 159 above
+# configure_planefence "PF_DISCORD_COLOR" "$PF_DISCORD_COLOR"
 
 # Add OPENAIPKEY for use with OpenAIP, necessary for it to work if PF_OPENAIP_LAYER is ON
 configure_planefence "OPENAIPKEY" "$PF_OPENAIPKEY"
