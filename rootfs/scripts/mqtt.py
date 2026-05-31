@@ -26,6 +26,7 @@ where:
 import argparse
 import ssl
 import paho.mqtt.publish as publish
+from paho.mqtt.enums import CallbackAPIVersion
 
 def main():
     # Set up command-line arguments
@@ -57,7 +58,7 @@ def main():
 
     # Publish the message
     try:
-        publish.single(topic=args.topic, payload=args.message, qos=args.qos, retain=True, hostname=args.broker, port=args.port, client_id=args.client_id, **({"auth": {'username': args.username, 'password': args.password}} if args.username and args.password else {}), **({"tls": tls_context} if tls_context else {}))
+        publish.single(topic=args.topic, payload=args.message, qos=args.qos, retain=True, hostname=args.broker, port=args.port, client_id=args.client_id, callback_api_version=CallbackAPIVersion.VERSION1, **({"auth": {'username': args.username, 'password': args.password}} if args.username and args.password else {}), **({"tls": tls_context} if tls_context else {}))
         print(f"Message '{args.message}' published to topic '{args.topic}' with QoS {args.qos}.")
     except Exception as e:
         print(f"Failure in publishing message!")
